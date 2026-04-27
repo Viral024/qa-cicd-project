@@ -18,14 +18,7 @@ jobs:
 
     - run: npm install
 
-    - name: Fix Playwright permissions
-      run: chmod +x node_modules/.bin/playwright
+    - run: npx playwright install
 
-    - name: Install Playwright browsers
-      run: npx playwright install
-
-    - name: Start server and run tests
-      run: |
-        npx live-server pages &
-        sleep 5
-        npx playwright test
+    - name: Run tests
+      run: npx playwright test
