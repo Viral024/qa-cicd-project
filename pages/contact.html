@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact</title>
+</head>
+<body>
+  <h1>Contact Us</h1>
+
+  <input id="name" placeholder="Name" />
+  <input id="email" placeholder="Email" />
+  <button id="submit" onclick="submitForm()">Submit</button>
+
+  <p id="success" style="display:none;">Form submitted!</p>
+
+  <script>
+    function submitForm() {
+      document.getElementById('success').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
