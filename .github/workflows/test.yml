@@ -16,9 +16,14 @@ jobs:
       with:
         node-version: 18
 
-    - run: npm install
+    - name: Install dependencies
+      run: npm ci
 
-    - run: npx playwright install
+    - name: Fix permissions
+      run: chmod -R 755 node_modules/.bin
+
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
 
     - name: Run tests
       run: npx playwright test
